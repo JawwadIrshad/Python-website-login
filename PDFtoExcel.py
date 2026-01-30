@@ -1,3 +1,4 @@
+#PDFtoExcel File
 import pdfplumber
 import pandas as pd
 import re
@@ -7,10 +8,6 @@ import data
 PDF_PATH = r"INVOICE.PDF"
 OUTPUT_EXCEL = "final_invoice.xlsx"
 
-
-# ---------------------------
-# Extract text from PDF
-# ---------------------------
 def extract_text(pdf_path):
     text = ""
     with pdfplumber.open(pdf_path) as pdf:
@@ -19,10 +16,6 @@ def extract_text(pdf_path):
                 text += page.extract_text() + "\n"
     return text
 
-
-# ---------------------------
-# Extract structured fields
-# ---------------------------
 def extract_summary(text):
     patterns = {
         "Invoice Number": r"INVOICE\s+([A-Z0-9]+)",
@@ -36,7 +29,6 @@ def extract_summary(text):
         "Shipper": r"SHIPPER\s*\n([^\n]+)",
         "Consignee": r"CONSIGNEE\s*\n([^\n]+)",
 
-        # --- FIXED LOGISTICS FIELDS ---
         "Origin": r"(PK[A-Z]{3}\s*=\s*[^0-9\n]+)",
         "ETD": r"\b(\d{2}-[A-Za-z]{3}-\d{2})\b",
         "Destination": r"(CZ[A-Z]{3}\s*=\s*[^0-9\n]+)",
@@ -70,13 +62,6 @@ def extract_summary(text):
 
     return data
 
-
-
-
-
-# ---------------------------
-# Extract charges table
-# ---------------------------
 def extract_charges(text):
     lines = text.splitlines()
     rows = []
@@ -102,9 +87,6 @@ def extract_charges(text):
     return rows
 
 
-# ---------------------------
-# Save Excel
-# ---------------------------
 def save_excel(summary, charges, output):
     df_summary = pd.DataFrame([summary])
     df_charges = pd.DataFrame(charges)
