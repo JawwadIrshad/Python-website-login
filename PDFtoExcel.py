@@ -5,7 +5,7 @@ import re
 
 import data
 
-PDF_PATH = r"INVOICE.PDF"
+PDF_PATH = r"INVOICE.PDF" #ADD path of the pdf file
 OUTPUT_EXCEL = "final_invoice.xlsx"
 
 def extract_text(pdf_path):
