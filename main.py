@@ -11,8 +11,6 @@ def close_flash_message(driver):
         close_btn.click()
     except:
         pass
-
-
 options = uc.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-blink-features=AutomationControlled")
@@ -39,7 +37,6 @@ try:
     driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 
-    
     wait.until(EC.presence_of_element_located((By.ID, "flash")))
     success_message = driver.find_element(By.ID, "flash").text
     logout_button = wait.until(EC.visibility_of_element_located(
