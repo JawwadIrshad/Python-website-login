@@ -24,7 +24,7 @@ driver = uc.Chrome(
 wait = WebDriverWait(driver, 10)
 
 try:
-    driver.get("https://the-internet.herokuapp.com")
+    driver.get("https://the-internet.herokuapp.com") #website link was added here
     time.sleep(5)
 
     wait.until(EC.element_to_be_clickable(
