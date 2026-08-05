@@ -1,8 +1,8 @@
 #PDF to Excel File
+
 import pdfplumber
 import pandas as pd
 import re
-
 import data
 
 PDF_PATH = r"INVOICE.PDF" #ADD path of the pdf file
