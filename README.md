@@ -141,7 +141,7 @@ The workbook contains two worksheets.
 Contains general invoice information such as:
 
 | Invoice Number | Invoice Date | Customer ID | Due Date | Total PKR |
-|---|---|---|---|---|
+|----|----|----|----|----|
 
 ### Charges
 
