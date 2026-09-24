@@ -4,7 +4,7 @@ A Python-based automation project containing practical tools for **PDF data extr
 
 The project demonstrates how Python can automate repetitive tasks such as extracting structured invoice data into Excel and testing website login/logout workflows using Selenium.
 
----
+----
 
 ## 🚀 Features
 
