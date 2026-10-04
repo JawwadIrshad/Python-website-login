@@ -148,7 +148,7 @@ Contains general invoice information such as:
 Contains individual invoice charges:
 
 | Description | Amount | Currency |
-|---|---:|---|
+|---|---:|----|
 | Example Charge | 5000.00 | PKR |
 
 ---
